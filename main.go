@@ -27,7 +27,7 @@ func main() {
 	}()
 
 	// Pass in the self-updating config values
-	go printConfigValues(ctx, cfg.ConnCount(), cfg.ETCDConfigs())
+	go printConfigValues(ctx, config.StaticValue[int]{Value: 12}, cfg.ETCDConfigs())
 
 	go testUsingSignalToReload(cfg)
 
